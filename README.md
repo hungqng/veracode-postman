@@ -1,5 +1,3 @@
-<img src="https://docs.veracode.com/internal/api/webapp/header/logo" width="200" /><br>
-
 # Accessing Veracode APIs with Postman
 
 ## Overview
