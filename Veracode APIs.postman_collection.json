@@ -18355,7 +18355,7 @@
 											"variable": [
 												{
 													"key": "userId",
-													"value": "75488b5a-5ff2-4b54-873a-eabde4157347",
+													"value": "",
 													"description": "(Required) The user ID."
 												}
 											]
@@ -19456,7 +19456,7 @@
 									"variable": [
 										{
 											"key": "userid",
-											"value": "929554df-4c02-4a11-9af6-0dc6f3f4c1b2"
+											"value": ""
 										}
 									]
 								}
@@ -19484,7 +19484,7 @@
 									"variable": [
 										{
 											"key": "userid",
-											"value": "929554df-4c02-4a11-9af6-0dc6f3f4c1b2"
+											"value": ""
 										}
 									]
 								}
@@ -19512,7 +19512,7 @@
 									"variable": [
 										{
 											"key": "userid",
-											"value": "929554df-4c02-4a11-9af6-0dc6f3f4c1b2"
+											"value": ""
 										}
 									]
 								}
@@ -40736,7 +40736,7 @@
 									"variable": [
 										{
 											"key": "projectID",
-											"value": "da9defad-d916-459a-9b9f-4a6e57a29b33"
+											"value": ""
 										}
 									]
 								}
@@ -40770,7 +40770,7 @@
 									"variable": [
 										{
 											"key": "workspaceID",
-											"value": "da9defad-d916-459a-9b9f-4a6e57a29b33"
+											"value": ""
 										}
 									]
 								}
@@ -40804,7 +40804,7 @@
 									"variable": [
 										{
 											"key": "applicationID",
-											"value": "5cacaa6a-8ec1-4eaa-a5fe-165dac956572"
+											"value": ""
 										}
 									]
 								}
@@ -40838,7 +40838,7 @@
 									"variable": [
 										{
 											"key": "applicationID",
-											"value": "5cacaa6a-8ec1-4eaa-a5fe-165dac956572"
+											"value": ""
 										}
 									]
 								}
@@ -40910,7 +40910,7 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "bd390f35-6823-4957-bae8-73d10597d42f"
+									"value": ""
 								}
 							]
 						}
@@ -40965,7 +40965,7 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "bd390f35-6823-4957-bae8-73d10597d42f"
+									"value": ""
 								}
 							]
 						}
@@ -40993,11 +40993,11 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "2a1d133a-d565-4bae-bf99-341b05ec15b8"
+									"value": ""
 								},
 								{
 									"key": "teamID",
-									"value": "c66231db-da51-48a6-9dcf-123b509e16a7"
+									"value": ""
 								}
 							]
 						}
@@ -41024,7 +41024,7 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
 								}
 							]
 						}
@@ -41060,7 +41060,7 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
 								}
 							]
 						}
@@ -41122,11 +41122,11 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
 								},
 								{
 									"key": "projectID",
-									"value": "da9defad-d916-459a-9b9f-4a6e57a29b33"
+									"value": ""
 								}
 							]
 						}
@@ -41153,7 +41153,7 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
 								}
 							]
 						}
@@ -41166,7 +41166,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/srcclr/v3/workspaces/:workspaceID/issues?project_id=da9defad-d916-459a-9b9f-4a6e57a29b33&direct=false",
+							"raw": "{{baseUrl}}/srcclr/v3/workspaces/:workspaceID/issues?project_id=&direct=false",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -41180,7 +41180,7 @@
 							"query": [
 								{
 									"key": "project_id",
-									"value": "da9defad-d916-459a-9b9f-4a6e57a29b33"
+									"value": ""
 								},
 								{
 									"key": "direct",
@@ -41190,7 +41190,7 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
 								}
 							]
 						}
@@ -41203,7 +41203,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/srcclr/v3/workspaces/:workspaceID/agents/2d051748-7d82-4144-b8fb-def7ca47bff1",
+							"raw": "{{baseUrl}}/srcclr/v3/workspaces/:workspaceID/agents/:agentID",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -41213,12 +41213,16 @@
 								"workspaces",
 								":workspaceID",
 								"agents",
-								"2d051748-7d82-4144-b8fb-def7ca47bff1"
+								":agentID"
 							],
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
+								},
+								{
+									"key": "agentID",
+									"value": null
 								}
 							]
 						}
@@ -41247,11 +41251,11 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
 								},
 								{
 									"key": "agentID",
-									"value": "28fd5004-fed2-417c-87cb-aa57e0a2dbea"
+									"value": ""
 								}
 							]
 						}
@@ -41280,11 +41284,11 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": "63362b46-a9d4-42b2-a94c-45b91f1cbc31"
+									"value": ""
 								},
 								{
 									"key": "agentID",
-									"value": "28fd5004-fed2-417c-87cb-aa57e0a2dbea"
+									"value": ""
 								}
 							]
 						}
@@ -41432,11 +41436,6 @@
 			"value": "{{hmacAuthHeader}}",
 			"type": "string",
 			"disabled": true
-		},
-		{
-			"key": "test",
-			"value": "",
-			"type": "string"
 		}
 	]
 }
