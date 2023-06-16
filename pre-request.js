@@ -1,7 +1,7 @@
 var url = require('url');
 
-const id = pm.variables.get('id');
-const key = pm.variables.get('key');
+const id = pm.variables.get('api_id');
+const key = pm.variables.get('api_key');
 const authorizationScheme = 'VERACODE-HMAC-SHA-256';
 const requestVersion = "vcode_request_version_1";
 const nonceSize = 16;
