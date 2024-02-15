@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "c55b5ad9-1a34-4836-af02-ecc8fb5369eb",
 		"name": "Veracode APIs",
-		"description": "HACKATHON 18\n\nThe Veracode REST APIs mirror many of the major application security and administrative tasks that you can perform in the [Veracode Platform](https://web.analysiscenter.veracode.com). You can use the APIs to automate many of these tasks. To understand how the APIs work, Veracode recommends that you familiarize yourself with the [Platform workflow](https://help.veracode.com/r/start) for performing application security testing and reviewing test results.\n\nThe APIs are designed for members of a software development team responsible for performing application security testing. Developers can use these APIs in rapid build-and-test cycles to fully automate security verification for entire software portfolios and to integrate with internal build and bug-tracking systems. Instead of using the Veracode Platform go through the manual process for submitting a scan request and reviewing the results, you can integrate the API calls directly into your IDEs and build pipelines to automate scanning early and often.\n\nThe APIs follow the <a href=\"https://www.openapis.org/\">OpenAPI specification</a> and send/receive [JSON](https://en.wikipedia.org/wiki/JSON) or [YAML](https://en.wikipedia.org/wiki/YAML).\n\nComplete API documentation, which includes the XML APIs and wrappers, is available in the <a href=\"https://help.veracode.com/r/c_api_main\">Veracode Help Center</a>.\n\n# Authentication\nVeracode API authentication requires a Veracode account and API ID/key credentials with Hash-based Message Authentication Code (HMAC) signing. You can use your API credentials for both human user accounts and non-human API service accounts. You can also use these credentials for both username/password and SAML login methods. The APIs use HMAC to digitally sign the HTTP header of each request with your API credentials.\n\nHMAC signing provides these security benefits:\n- Credentials are not sent in the clear as plain text. The API key is never transmitted, but encrypts the HMAC from the sender-side and decrypts it from the server-side.\n- The HMAC signature validates that the message was not tampered with or altered in transit. Any change to the message invalidates the HMAC.\n- The HMAC signature includes a nonce (one-time code) that prevents replay attacks.\n- You can revoke and regenerate the Veracode API credentials to respond to an accidental credentials leak.\n\n## Configure Your Authentication\n1. Use the Veracode Platform to create or update a [Veracode account](https://documenter.getpostman.com/view/13366636/TzJpiKeK#f3d7bd6a-975f-417d-8ea7-1d6a8bd272c0) with the required roles for each API you want to use. \n2. Select an API folder to the left to view the required roles for using that API.\n\n    If you already have an account with the Administrator role or Admin API role, you can create and manage accounts with the [Identity API](https://documenter.getpostman.com/view/13366636/TzJpiKeK#f3d7bd6a-975f-417d-8ea7-1d6a8bd272c0). \n3. Use the Identity API or the Veracode Platform to generate or update your API credentials. \n\n    Optionally, you can store your API credentials securely in an [API credentials file](https://help.veracode.com/r/c_configure_api_cred_file).\n4. [Configure HMAC signing](https://help.veracode.com/r/c_enabling_hmac).\n\n## Add Your API Credentials to Postman\nYou can click [**Run in Postman**](https://learning.postman.com/docs/publishing-your-api/run-in-postman/introduction-run-button/), in the top-right corner, to import this collection into the Postman client.\n\nYou can add your [API credentials](https://help.veracode.com/r/c_api_credentials3) to the collection as variables, so that you can avoid having to enter your credentials for each request. This collection also has pre-configured HMAC signing and includes a variable with the base URL for accessing Veracode - you can start sending requests in Postman immediately after adding your API credentials.\n\nTo add your API credentials to Postman:\n1. In Postman, select the **Veracode APIs** collection.\n1. Select the **Variables** tab.\n1. In the CURRENT VALUES column, add your API ID to the `id` field and your API key to the `key` field.\n1. Click **Save**. You can now send requests in Postman using the APIs in the collection. Ensure you have the required [roles](https://documenter.getpostman.com/view/13366636/TzJpiKeK#f3d7bd6a-975f-417d-8ea7-1d6a8bd272c0) for using each API.\n\n![Variables tab in Postman](https://raw.githubusercontent.com/veracode/veracode-rest-apis/main/images/postman-variables-tab.png?token=ATPK4C65STNNCOO322FU5LTAS7XVI)\n\n# Getting Started\n1. Configure your [authentication](##configure-your-authentication) to obtain your API credentials.\n\n    **NOTE:** If you already have API credentials, click **Run in Postman**, in the top-right corner, to import this collection into the Postman client. Then, you can [add your API credentials to the collection as variables](Add-Your-API-Credentials-to-Postman) and start sending requests.\n\n2. Send this request to perform a simple test for verifying your authentication using the [Healthcheck API](https://documenter.getpostman.com/view/13366636/TzJpiKeK#ceaa491b-9774-4cf0-9bdc-10461914b974):\n\n    `http --auth-type=veracode_hmac GET https://api.veracode.com/healthcheck/status`\n\n    A `200` code in the response indicates successful authentication. A `401` code in the response indicates an authentication issue.\n\n3. Visit the [Veracode Help Center](https://help.veracode.com/home) to learn about the tasks and workflows for performing application security testing and reviewing test results. The APIs mirror many of the tasks that you perform in the Veracode Platform.\n\n# Status Codes\n| Code | Status | Description |\n| --- | --- | --- |\n| 200 | Successful request | |\n| 400 | Invalid request | Ensure all components of your request are correct and try again.|\n| 401 | Access denied | Ensure your [authentication](Authentication) is valid.|\n| 404 | Not found | Specify a different object or create a new object.|\n| 500 | Server-side error | Try again or contact Veracode Technical Support. |\n\n# Support\nFor help with accessing and using the Veracode APIs, feel free to visit and contribute to the [Veracode Community](https://community.veracode.com). You can also reach out to support@veracode.com.\n\n# Terms of Use\nFor information on the terms of use and privacy for our APIs, refer to our legal documentation at https://www.veracode.com/legal-privacy\n\n# API Reference",
+		"description": "HACKATHON 18\n\nThe Veracode REST APIs mirror many of the major application security and administrative tasks that you can perform in the [Veracode Platform](https://web.analysiscenter.veracode.com). You can use the APIs to automate many of these tasks. To understand how the APIs work, Veracode recommends that you familiarize yourself with the [Platform workflow](https://help.veracode.com/r/start) for performing application security testing and reviewing test results.\n\nThe APIs are designed for members of a software development team responsible for performing application security testing. Developers can use these APIs in rapid build-and-test cycles to fully automate security verification for entire software portfolios and to integrate with internal build and bug-tracking systems. Instead of using the Veracode Platform go through the manual process for submitting a scan request and reviewing the results, you can integrate the API calls directly into your IDEs and build pipelines to automate scanning early and often.\n\nThe APIs follow the\n\n<a href=\"https://www.openapis.org/\">OpenAPI specification</a>\n\nand send/receive [JSON](https://en.wikipedia.org/wiki/JSON) or [YAML](https://en.wikipedia.org/wiki/YAML).\n\nComplete API documentation, which includes the XML APIs and wrappers, is available in the\n\n<a href=\"https://help.veracode.com/r/c_api_main\">Veracode Help Center</a>\n\n.\n\n# Authentication\n\nVeracode API authentication requires a Veracode account and API ID/key credentials with Hash-based Message Authentication Code (HMAC) signing. You can use your API credentials for both human user accounts and non-human API service accounts. You can also use these credentials for both username/password and SAML login methods. The APIs use HMAC to digitally sign the HTTP header of each request with your API credentials.\n\nHMAC signing provides these security benefits:\n\n- Credentials are not sent in the clear as plain text. The API key is never transmitted, but encrypts the HMAC from the sender-side and decrypts it from the server-side.\n- The HMAC signature validates that the message was not tampered with or altered in transit. Any change to the message invalidates the HMAC.\n- The HMAC signature includes a nonce (one-time code) that prevents replay attacks.\n- You can revoke and regenerate the Veracode API credentials to respond to an accidental credentials leak.\n    \n\n## Configure Your Authentication\n\n1. Use the Veracode Platform to create or update a [Veracode account](https://documenter.getpostman.com/view/13366636/TzJpiKeK#f3d7bd6a-975f-417d-8ea7-1d6a8bd272c0) with the required roles for each API you want to use.\n2. Select an API folder to the left to view the required roles for using that API.If you already have an account with the Administrator role or Admin API role, you can create and manage accounts with the [Identity API](https://documenter.getpostman.com/view/13366636/TzJpiKeK#f3d7bd6a-975f-417d-8ea7-1d6a8bd272c0).\n3. Use the Identity API or the Veracode Platform to generate or update your API credentials.Optionally, you can store your API credentials securely in an [API credentials file](https://help.veracode.com/r/c_configure_api_cred_file).\n4. [Configure HMAC signing](https://help.veracode.com/r/c_enabling_hmac).\n    \n\n## Add Your API Credentials to Postman\n\nYou can click [<b>Run in Postman</b>](https://learning.postman.com/docs/publishing-your-api/run-in-postman/introduction-run-button/), in the top-right corner, to import this collection into the Postman client.\n\nYou can add your [API credentials](https://help.veracode.com/r/c_api_credentials3) to the collection as variables, so that you can avoid having to enter your credentials for each request. This collection also has pre-configured HMAC signing and includes a variable with the base URL for accessing Veracode - you can start sending requests in Postman immediately after adding your API credentials.\n\nTo add your API credentials to Postman:\n\n1. In Postman, select the **Veracode APIs** collection.\n2. Select the **Variables** tab.\n3. In the CURRENT VALUES column, add your API ID to the `id` field and your API key to the `key` field.\n4. Click **Save**. You can now send requests in Postman using the APIs in the collection. Ensure you have the required [roles](https://documenter.getpostman.com/view/13366636/TzJpiKeK#f3d7bd6a-975f-417d-8ea7-1d6a8bd272c0) for using each API.\n    \n\n<img src=\"https://raw.githubusercontent.com/veracode/veracode-rest-apis/main/images/postman-variables-tab.png?token=ATPK4C65STNNCOO322FU5LTAS7XVI\" alt=\"\">\n\n# Getting Started\n\n1. Configure your [authentication](##configure-your-authentication) to obtain your API credentials.**NOTE:** If you already have API credentials, click **Run in Postman**, in the top-right corner, to import this collection into the Postman client. Then, you can [add your API credentials to the collection as variables](https://Add-Your-API-Credentials-to-Postman) and start sending requests.\n2. Send this request to perform a simple test for verifying your authentication using the [Healthcheck API](https://documenter.getpostman.com/view/13366636/TzJpiKeK#ceaa491b-9774-4cf0-9bdc-10461914b974):`http --auth-type=veracode_hmac GET https://api.veracode.com/healthcheck/status`A `200` code in the response indicates successful authentication. A `401` code in the response indicates an authentication issue.\n3. Visit the [Veracode Help Center](https://help.veracode.com/home) to learn about the tasks and workflows for performing application security testing and reviewing test results. The APIs mirror many of the tasks that you perform in the Veracode Platform.\n    \n\n# Status Codes\n\n| Code | Status | Description |\n| --- | --- | --- |\n| 200 | Successful request |  |\n| 400 | Invalid request | Ensure all components of your request are correct and try again. |\n| 401 | Access denied | Ensure your [authentication](https://Authentication) is valid. |\n| 404 | Not found | Specify a different object or create a new object. |\n| 500 | Server-side error | Try again or contact Veracode Technical Support. |\n\n# Support\n\nFor help with accessing and using the Veracode APIs, feel free to visit and contribute to the [Veracode Community](https://community.veracode.com). You can also reach out to [support@veracode.com](https://mailto:support@veracode.com).\n\n# Terms of Use\n\nFor information on the terms of use and privacy for our APIs, refer to our legal documentation at [https://www.veracode.com/legal-privacy](https://www.veracode.com/legal-privacy)\n\n# API Reference",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "19316853"
 	},
@@ -419,7 +419,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/appsec/v1/applications/:applicationGuid/sandboxes?page=60157012&size=60157012",
+													"raw": "{{baseUrl}}/appsec/v1/applications/:applicationGuid/sandboxes",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -434,18 +434,20 @@
 														{
 															"key": "page",
 															"value": "60157012",
-															"description": "Page number. Defaults to 0."
+															"description": "Page number. Defaults to 0.",
+															"disabled": true
 														},
 														{
 															"key": "size",
 															"value": "60157012",
-															"description": "Page size, up to 500. The default is 50."
+															"description": "Page size, up to 500. The default is 50.",
+															"disabled": true
 														}
 													],
 													"variable": [
 														{
 															"key": "applicationGuid",
-															"value": "nulla laboris adipisicin",
+															"value": "",
 															"description": "(Required) The application GUID."
 														}
 													]
@@ -4375,7 +4377,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/appsec/v1/applications?name=Verademo",
+									"raw": "{{baseUrl}}/appsec/v1/applications?name=",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -4387,7 +4389,7 @@
 									"query": [
 										{
 											"key": "name",
-											"value": "Verademo"
+											"value": ""
 										}
 									]
 								},
@@ -9021,7 +9023,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/appsec/v2/applications/:application_guid/findings?context=officia aute id&cve=officia aute id&cvss=-57929022.91597373&cvss_gte=-57929022.91597373&cwe=-87724237&cwe=-12968601&finding_category=-87724237&finding_category=-12968601&include_annot=false&include_exp_date=true&mitigated_after=1987-01-10T08:28:47.163Z&new=true&sca_dep_mode=UNKNOWN&sca_scan_mode=UPLOAD&scan_type=STATIC&severity=-1660960&severity_gte=-1660960&violates_policy=true",
+									"raw": "{{baseUrl}}/appsec/v2/applications/:application_guid/findings?scan_type=STATIC&violates_policy=true",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -9036,72 +9038,86 @@
 										{
 											"key": "context",
 											"value": "officia aute id",
-											"description": "Context type, which filters results to show only the findings of this specific context type. The findings status parameter is relative to this context parameter."
+											"description": "Context type, which filters results to show only the findings of this specific context type. The findings status parameter is relative to this context parameter.",
+											"disabled": true
 										},
 										{
 											"key": "cve",
 											"value": "officia aute id",
-											"description": "CVE ID."
+											"description": "CVE ID.",
+											"disabled": true
 										},
 										{
 											"key": "cvss",
 											"value": "-57929022.91597373",
-											"description": "CVSS ID (0-10), which can be double (decimal) values. This filter returns all findings with a CVSS value equal to the provided value."
+											"description": "CVSS ID (0-10), which can be double (decimal) values. This filter returns all findings with a CVSS value equal to the provided value.",
+											"disabled": true
 										},
 										{
 											"key": "cvss_gte",
 											"value": "-57929022.91597373",
-											"description": "CVSS ID (0-10), which can be double (decimal) values. This filter returns all findings with a CVSS value greater than or equal to the provided value."
+											"description": "CVSS ID (0-10), which can be double (decimal) values. This filter returns all findings with a CVSS value greater than or equal to the provided value.",
+											"disabled": true
 										},
 										{
 											"key": "cwe",
 											"value": "-87724237",
-											"description": "CWE ID (single or comma-delimited)."
+											"description": "CWE ID (single or comma-delimited).",
+											"disabled": true
 										},
 										{
 											"key": "cwe",
 											"value": "-12968601",
-											"description": "CWE ID (single or comma-delimited)."
+											"description": "CWE ID (single or comma-delimited).",
+											"disabled": true
 										},
 										{
 											"key": "finding_category",
 											"value": "-87724237",
-											"description": "Category of finding (single or comma-delimited). Not valid for the SCA scan type."
+											"description": "Category of finding (single or comma-delimited). Not valid for the SCA scan type.",
+											"disabled": true
 										},
 										{
 											"key": "finding_category",
 											"value": "-12968601",
-											"description": "Category of finding (single or comma-delimited). Not valid for the SCA scan type."
+											"description": "Category of finding (single or comma-delimited). Not valid for the SCA scan type.",
+											"disabled": true
 										},
 										{
 											"key": "include_annot",
 											"value": "false",
-											"description": "Use this flag to include the annotations in the response. Not valid for the SCA scan type."
+											"description": "Use this flag to include the annotations in the response. Not valid for the SCA scan type.",
+											"disabled": true
 										},
 										{
 											"key": "include_exp_date",
 											"value": "true",
-											"description": "Use this flag to include findings grace period expiry date in the response."
+											"description": "Use this flag to include findings grace period expiry date in the response.",
+											"disabled": true
 										},
 										{
 											"key": "mitigated_after",
 											"value": "1987-01-10T08:28:47.163Z",
-											"description": "Return all findings with annotations mitigated after the specified date. Does not apply to the SCA scan type. Use date format: yyyy-MM-dd"
+											"description": "Return all findings with annotations mitigated after the specified date. Does not apply to the SCA scan type. Use date format: yyyy-MM-dd",
+											"disabled": true
 										},
 										{
 											"key": "new",
 											"value": "true",
-											"description": "Use this flag to include only new findings in the current context (policy or sandbox) in the response."
+											"description": "Use this flag to include only new findings in the current context (policy or sandbox) in the response.",
+											"disabled": true
 										},
 										{
 											"key": "sca_dep_mode",
 											"value": "UNKNOWN",
-											"description": "Return all findings with the specified SCA dependency mode. Only valid for the SCA scan type."
+											"description": "Return all findings with the specified SCA dependency mode. Only valid for the SCA scan type.",
+											"disabled": true
 										},
 										{
 											"key": "sca_scan_mode",
 											"value": "UPLOAD",
-											"description": "Return all findings from SCA scans of the specified scan mode. Only valid for the SCA scan type."
+											"description": "Return all findings from SCA scans of the specified scan mode. Only valid for the SCA scan type.",
+											"disabled": true
 										},
 										{
 											"key": "scan_type",
@@ -9111,12 +9127,14 @@
 										{
 											"key": "severity",
 											"value": "-1660960",
-											"description": "This filter returns all findings with this severity value (0-5)."
+											"description": "This filter returns all findings with this severity value (0-5).",
+											"disabled": true
 										},
 										{
 											"key": "severity_gte",
 											"value": "-1660960",
-											"description": "This filter returns all scan findings with a severity value greater or equal to the value of the filter (0-5)."
+											"description": "This filter returns all scan findings with a severity value greater or equal to the value of the filter (0-5).",
+											"disabled": true
 										},
 										{
 											"key": "violates_policy",
@@ -9127,7 +9145,7 @@
 									"variable": [
 										{
 											"key": "application_guid",
-											"value": "officia aute id",
+											"value": "",
 											"description": "(Required) The application identifier."
 										}
 									]
@@ -19437,6 +19455,41 @@
 							"response": []
 						},
 						{
+							"name": "postCreateApiUserWithCreds",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"user_name\":\"hungapi4\",\r\n   \"user_type\": \"VOSP\",\r\n   \"first_name\":\"Hung\",\r\n   \"last_name\":\"API\",\r\n   \"email_address\":\"hunguyen@veracode.com\",\r\n   \"login_enabled\": \"false\",\r\n   \"ip_restricted\":false,\r\n   \"pin_required\":false,\r\n   \"active\":true,\r\n   \"agree_terms\":true,\r\n   \"roles\":[\r\n      {\r\n         \"role_name\":\"noteamrestrictionapi\"\r\n      },\r\n      {\r\n         \"role_name\":\"apisubmitanyscan\"\r\n      },\r\n      {\r\n         \"role_name\":\"uploadapi\"\r\n      },\r\n      {\r\n         \"role_name\":\"resultsapi\"\r\n      }\r\n   ],\r\n   \"permissions\":[\r\n      {\r\n         \"permission_name\":\"apiUser\"\r\n      }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/authn/v2/users?generate_api_creds=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"authn",
+										"v2",
+										"users"
+									],
+									"query": [
+										{
+											"key": "generate_api_creds",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "deleteDeleteUser",
 							"request": {
 								"method": "DELETE",
@@ -28388,7 +28441,7 @@
 			]
 		},
 		{
-			"name": "Web Application Scanning",
+			"name": "DAST",
 			"item": [
 				{
 					"name": "analyses",
@@ -29855,18 +29908,21 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/analyses/:analysis_id",
+											"raw": "{{baseUrl}}/was/configservice/v1/analyses/:analysis_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"was",
+												"configservice",
+												"v1",
 												"analyses",
 												":analysis_id"
 											],
 											"variable": [
 												{
 													"key": "analysis_id",
-													"value": "sint esse nostrud ut in",
+													"value": "",
 													"description": "(Required) ID of the Dynamic Analysis."
 												}
 											]
@@ -31042,58 +31098,70 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/analyses?page=-76613065&size=-76613065&sort=Ut commodo&sort=irure&name=sint esse nostrud ut in&target_url=sint esse nostrud ut in&search_term=sint esse nostrud ut in&status=STOPPING_DELETING_RESULT&status=SUBMITTED",
+									"raw": "{{baseUrl}}/was/configservice/v1/analyses",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"was",
+										"configservice",
+										"v1",
 										"analyses"
 									],
 									"query": [
 										{
 											"key": "page",
 											"value": "-76613065",
-											"description": "The number of the results pages you want to retrieve (0..N), where the default is 0 if you do not specify a page."
+											"description": "The number of the results pages you want to retrieve (0..N), where the default is 0 if you do not specify a page.",
+											"disabled": true
 										},
 										{
 											"key": "size",
 											"value": "-76613065",
-											"description": "The number of records you want to display per page. The maximum is 100 and the default is 20."
+											"description": "The number of records you want to display per page. The maximum is 100 and the default is 20.",
+											"disabled": true
 										},
 										{
 											"key": "sort",
 											"value": "Ut commodo",
-											"description": "Sorting criteria in the format: property(,asc|desc). The default sort order is ascending. The following sort criteria are supported: name, status, number_of_scans, latest_occurrence_date_time.\n"
+											"description": "Sorting criteria in the format: property(,asc|desc). The default sort order is ascending. The following sort criteria are supported: name, status, number_of_scans, latest_occurrence_date_time.\n",
+											"disabled": true
 										},
 										{
 											"key": "sort",
 											"value": "irure",
-											"description": "Sorting criteria in the format: property(,asc|desc). The default sort order is ascending. The following sort criteria are supported: name, status, number_of_scans, latest_occurrence_date_time.\n"
+											"description": "Sorting criteria in the format: property(,asc|desc). The default sort order is ascending. The following sort criteria are supported: name, status, number_of_scans, latest_occurrence_date_time.\n",
+											"disabled": true
 										},
 										{
 											"key": "name",
 											"value": "sint esse nostrud ut in",
-											"description": "Filter by the Dynamic Analysis name."
+											"description": "Filter by the Dynamic Analysis name.",
+											"disabled": true
 										},
 										{
 											"key": "target_url",
 											"value": "sint esse nostrud ut in",
-											"description": "Filter by the Dynamic Analysis target URLs."
+											"description": "Filter by the Dynamic Analysis target URLs.",
+											"disabled": true
 										},
 										{
 											"key": "search_term",
 											"value": "sint esse nostrud ut in",
-											"description": "Filter by the Dynamic Analysis name OR target URLs"
+											"description": "Filter by the Dynamic Analysis name OR target URLs",
+											"disabled": true
 										},
 										{
 											"key": "status",
 											"value": "STOPPING_DELETING_RESULT",
-											"description": "Filter by the Dynamic Analysis status."
+											"description": "Filter by the Dynamic Analysis status.",
+											"disabled": true
 										},
 										{
 											"key": "status",
 											"value": "SUBMITTED",
-											"description": "Filter by the Dynamic Analysis status."
+											"description": "Filter by the Dynamic Analysis status.",
+											"disabled": true
 										}
 									]
 								}
@@ -40391,33 +40459,40 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/platform_applications?page=-76613065&size=-76613065&sort=sint esse nostrud ut in&application_name=sint esse nostrud ut in",
+							"raw": "{{baseUrl}}/was/configservice/v1/platform_applications",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"was",
+								"configservice",
+								"v1",
 								"platform_applications"
 							],
 							"query": [
 								{
 									"key": "page",
 									"value": "-76613065",
-									"description": "The number of the results pages you want to retrieve (0..N), where the default is 0 if you do not specify a page."
+									"description": "The number of the results pages you want to retrieve (0..N), where the default is 0 if you do not specify a page.",
+									"disabled": true
 								},
 								{
 									"key": "size",
 									"value": "-76613065",
-									"description": "The number of records you want to display per page. The maximum is 100 and the default is 20."
+									"description": "The number of records you want to display per page. The maximum is 100 and the default is 20.",
+									"disabled": true
 								},
 								{
 									"key": "sort",
 									"value": "sint esse nostrud ut in",
-									"description": "Use this parameter to sort the results in the format: property(,asc|desc). The default sort order is ascending. The following sort criteria are supported: name, id"
+									"description": "Use this parameter to sort the results in the format: property(,asc|desc). The default sort order is ascending. The following sort criteria are supported: name, id",
+									"disabled": true
 								},
 								{
 									"key": "application_name",
 									"value": "sint esse nostrud ut in",
-									"description": "Application name-based search parameter."
+									"description": "Application name-based search parameter.",
+									"disabled": true
 								}
 							]
 						}
@@ -40679,6 +40754,35 @@
 							"body": ""
 						}
 					]
+				},
+				{
+					"name": "postCreateADynamicScan with auto-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Name-of-Your-Dynamic-Analysis\",\r\n  \"scans\": [\r\n    {\r\n      \"scan_config_request\": {\r\n        \"target_url\": {\r\n          \"url\": \"http://www.example.com\",\r\n          \"http_and_https\": true,\r\n          \"directory_restriction_type\": \"DIRECTORY_AND_SUBDIRECTORY\"\r\n        },\r\n        \"auth_configuration\": {\r\n          \"authentications\": {\r\n            \"AUTO\": {\r\n              \"username\": \"demo\",\r\n              \"password\": \"demo\",\r\n              \"authtype\": \"AUTO\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"schedule\": {\r\n    \"duration\": {\r\n      \"length\": 7,\r\n      \"unit\": \"DAY\"\r\n    },\r\n    \"scheduled\": true,\r\n    \"now\": true\r\n  }\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/was/configservice/v1/analyses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"was",
+								"configservice",
+								"v1",
+								"analyses"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "You can use the Dynamic Analysis API to automate major dynamic scanning tasks.\n\nThis API enables you to programmatically initiate dynamic scanning with the flexibility necessary for incorporating this type of security scanning into your Software Development Life Cycle (SDLC).\n\nThe API endpoints perform these tasks:\n- Create analyses with URL scans\n- Configure analyses and URL scans\n- Schedule and run analyses\n- Link analyses to Veracode application profiles\n- After completing a dynamic analysis scan, you can use the [Findings API](https://documenter.getpostman.com/view/13366636/TzJpiKeK#3e3b8de9-2dd6-4dc7-9553-eda45efb3345) to get information on a discovered flaw.\n\n# Account Requirements\nBefore you can use all endpoints of this API, you must configure your <a href=\"#authentication\">authentication</a> and have one of these <a href=\"https://documenter.getpostman.com/view/13366636/TzJpiKeK#f3d7bd6a-975f-417d-8ea7-1d6a8bd272c0\">Veracode accounts</a> with the required roles:\n- An API service account with the Upload and Scan API role.\n- A User account with the Security Lead, Creator, or Submitter role.",
@@ -41024,7 +41128,7 @@
 							"variable": [
 								{
 									"key": "workspaceID",
-									"value": ""
+									"value": "e5aa35fc-5027-4ed6-9495-5dcc7c6ed2c1"
 								}
 							]
 						}
@@ -41298,40 +41402,6 @@
 			]
 		},
 		{
-			"name": "DAST",
-			"item": [
-				{
-					"name": "postCreateADynamicScan with auto-login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Name-of-Your-Dynamic-Analysis\",\r\n  \"scans\": [\r\n    {\r\n      \"scan_config_request\": {\r\n        \"target_url\": {\r\n          \"url\": \"http://www.example.com\",\r\n          \"http_and_https\": true,\r\n          \"directory_restriction_type\": \"DIRECTORY_AND_SUBDIRECTORY\"\r\n        },\r\n        \"auth_configuration\": {\r\n          \"authentications\": {\r\n            \"AUTO\": {\r\n              \"username\": \"demo\",\r\n              \"password\": \"demo\",\r\n              \"authtype\": \"AUTO\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"schedule\": {\r\n    \"duration\": {\r\n      \"length\": 7,\r\n      \"unit\": \"DAY\"\r\n    },\r\n    \"scheduled\": true,\r\n    \"now\": true\r\n  }\r\n}   ",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/was/configservice/v1/analyses",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"was",
-								"configservice",
-								"v1",
-								"analyses"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Reporting",
 			"item": [
 				{
@@ -41372,8 +41442,8 @@
 				"exec": [
 					"var url = require('url');",
 					"",
-					"const id = pm.variables.get('id');",
-					"const key = pm.variables.get('key');",
+					"const id = pm.variables.get('api_id');",
+					"const key = pm.variables.get('api_key');",
 					"const authorizationScheme = 'VERACODE-HMAC-SHA-256';",
 					"const requestVersion = \"vcode_request_version_1\";",
 					"const nonceSize = 16;",
@@ -41412,7 +41482,8 @@
 					"pm.request.headers.add({",
 					"    key: 'Authorization',",
 					"    value: calculateVeracodeAuthHeader(request['method'], request['url'])",
-					"});"
+					"});",
+					""
 				]
 			}
 		},
@@ -41429,7 +41500,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://api.veracode.com"
+			"value": ""
 		},
 		{
 			"key": "hmacAuth",
